@@ -26,23 +26,23 @@ end
 
 case forecast.currently.windBearing
 when 0..22
-  wind = "⇓"
+  wind = "↓"
 when 23..67
-  wind = "⇙"
+  wind = "↙"
 when 68..112
-  wind = "⇐"
+  wind = "←"
 when 113..157
-  wind = "⇖"
+  wind = "↖"
 when 158..202
-  wind = "⇑"
+  wind = "↑"
 when 203..247
-  wind = "⇗"
+  wind = "↗"
 when 248..292
-  wind = "⇒"
+  wind = "→"
 when 293..337
-  wind = "⇘"
+  wind = "↘"
 when 338..365
-  wind = "⇓"
+  wind = "↓"
 end
 
 puts wind + temperature.round.to_s + '°F ' + humidity.round.to_s + '%RH' + icon
