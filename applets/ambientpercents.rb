@@ -19,7 +19,7 @@ if	forecast.minutely.icon.include?("rain") ||
 	forecast.currently.summary.downcase.include?("rain") || 
 	forecast.currently.precipIntensity > 0 || 
 	forecast.currently.precipType ||
-	forecast.currently.precipProbability > 5
+	forecast.currently.precipProbability > 25
 then	icon ="☔"
 end
 
