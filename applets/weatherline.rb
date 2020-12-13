@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+#require '☔☔☔'
 require 'forecast_io'
 ForecastIO.api_key = 'cf20d2bc8131e875da42c2f5f85d7282'
 
