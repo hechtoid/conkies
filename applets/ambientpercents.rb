@@ -7,18 +7,20 @@ forecast = ForecastIO.forecast(37.799944,-122.406361)
 humidity = forecast.currently.humidity*100
 temperature = forecast.currently.apparentTemperature
 
-rain = ""
-rain =
-	forecast.hourly.icon.include?("rain") || 
-	forecast.hourly.summary.downcase.include?("rain") ? 
-	"☂" : rain
-rain =
-	forecast.currently.icon.include?("rain") || 
+icon = ""
+if 	forecast.hourly.icon.include?("rain") || 
+	forecast.hourly.summary.downcase.include?("rain")
+then	icon =	"☂"
+end
+
+if	forecast.currently.icon.include?("rain") || 
 	forecast.currently.summary.downcase.include?("rain") || 
 	forecast.currently.precipIntensity > 0 || 
 	forecast.currently.precipType ||
-	forecast.currently.precipProbability > 5 ?
-	"☔" : rain
+	forecast.currently.precipProbability > 5
+then	icon ="☔"
+end
+
 case forecast.currently.windBearing
 when 0..22
   wind = "⇓"
@@ -39,4 +41,5 @@ when 293..337
 when 338..365
   wind = "⇓"
 end
-puts wind + temperature.round.to_s + '°F ' + humidity.round.to_s + '%RH' + rain
+
+puts wind + temperature.round.to_s + '°F ' + humidity.round.to_s + '%RH' + icon
