@@ -1,9 +1,8 @@
 #!/bin/bash
 
 #lines=`$(cat /run/shm/redshifter) 2> /dev/null|tail -2`
+#echo $lines|cut -c 20-50
 
-lines=`redshift $(ps x|grep "[r]edshift-gtk"| awk '{$1=$2=$3=$4=$5=$6=""}1'| sed s/^\ *// ) -p 2> /dev/null|tail -2`
-
-echo $lines|cut -c 20-50
+echo `redshift $(ps x|grep "[r]edshift-gtk"| awk '{$1=$2=$3=$4=$5=$6=""}1'| sed s/^\ *// ) -p 2> /dev/null|tail -2` | cut -c 20-50
 
 #cat /run/shm/redshift
