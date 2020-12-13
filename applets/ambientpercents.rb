@@ -13,7 +13,9 @@ if 	forecast.hourly.icon.include?("rain") ||
 then	icon =	"☂"
 end
 
-if	forecast.currently.icon.include?("rain") || 
+if	forecast.minutely.icon.include?("rain") || 
+	forecast.minutely.summary.downcase.include?("rain") || 
+	forecast.currently.icon.include?("rain") || 
 	forecast.currently.summary.downcase.include?("rain") || 
 	forecast.currently.precipIntensity > 0 || 
 	forecast.currently.precipType ||
