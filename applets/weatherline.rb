@@ -46,3 +46,4 @@ when 338..365
 end
 
 puts wind + temperature.round.to_s + '°F ' + humidity.round.to_s + '%RH' + icon
+# ↗55°F 93%RH☔
