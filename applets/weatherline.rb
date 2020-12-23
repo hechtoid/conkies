@@ -4,8 +4,6 @@ require 'forecast_io'
 ForecastIO.api_key = 'cf20d2bc8131e875da42c2f5f85d7282'
 
 forecast = ForecastIO.forecast(37.799944,-122.406361)
-
-humidity = forecast.currently.humidity*100
 temperature = forecast.currently.apparentTemperature
 
 icon = ""
@@ -45,5 +43,5 @@ when 338..365
   wind = "↓"
 end
 
-puts wind + temperature.round.to_s + '°F ' + humidity.round.to_s + '%RH' + icon
+puts wind + temperature.round.to_s + '°F ' + forecast.currently.humidity.to_s[2..3] + '%RH' + icon
 # ↗55°F 93%RH☔
