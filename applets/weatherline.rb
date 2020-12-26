@@ -43,5 +43,5 @@ when 338..365
   wind = "↓"
 end
 
-puts wind + temperature.round.to_s + '°F ' + forecast.currently.humidity.to_s[2..3] + '%RH' + icon
+puts wind + temperature.round.to_s + '°F ' + (forecast.currently.humidity*100).to_s[0..1] + '%RH' + icon
 # ↗55°F 93%RH☔
